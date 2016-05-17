@@ -26,7 +26,9 @@
       // クリックしたとき
       function onClick(e) {
         console.log("click");
-        console.log("x:", e.clientX, "y:", e.clientY);
+        var x = e.clientX - canvas.offsetLeft;
+        var y = e.clientY - canvas.offsetTop;
+        console.log("x:", x, "y:", y);
       }
 
       // 上に乗っているとき
