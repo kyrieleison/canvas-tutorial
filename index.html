@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>canvas dnd tutorial</title>
+    <title>canvas tutorial</title>
     <style>
       #canvas {
         background: #666;
@@ -29,6 +29,8 @@
         var x = e.clientX - canvas.offsetLeft;
         var y = e.clientY - canvas.offsetTop;
         console.log("x:", x, "y:", y);
+
+        drawRect(x, y, 10, 10);
       }
 
       // 上に乗っているとき
@@ -39,6 +41,12 @@
       // 上から離れたとき
       function onOut() {
         console.log("mouseout");
+      }
+
+      // 矩形描画
+      function drawRect(x, y, width, height) {
+        var context = canvas.getContext('2d');
+        context.fillRect(x, y, width, height);
       }
 
       canvas.addEventListener('mousedown', onDown, false);
