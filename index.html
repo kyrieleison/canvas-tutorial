@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>canvas dnd tutorial</title>
+    <style>
+      #canvas {
+        background: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <script>
+      var canvas = document.getElementById("canvas");
+
+      // マウスが押されたとき
+      function onDown(e) {
+        console.log("down");
+      }
+
+      // マウスが離れたとき
+      function onUp(e) {
+        console.log("up");
+      }
+
+      // クリックしたとき
+      function onClick(e) {
+        console.log("click");
+        console.log("x:", e.clientX, "y:", e.clientY);
+      }
+
+      // 上に乗っているとき
+      function onOver(e) {
+        console.log("mouseover");
+      }
+
+      // 上から離れたとき
+      function onOut() {
+        console.log("mouseout");
+      }
+
+      canvas.addEventListener('mousedown', onDown, false);
+      canvas.addEventListener('mouseup', onUp, false);
+      canvas.addEventListener('click', onClick, false);
+      canvas.addEventListener('mouseover', onOver, false);
+      canvas.addEventListener('mouseout', onOut, false);
+      canvas.addEventListener('touchstart', onDown, false);
+      canvas.addEventListener('touchend', onUp, false);
+    </script>
+  </body>
+</html>
